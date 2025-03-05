@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Lifts for Hire - Login{% endblock %}
+
+{% block content %}
+<form method="POST" action="/login" style="padding: 4rem;">
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder=" " required>
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder=" " required>
+    </div>
+    <button class="btn btn-primary">
+        Login
+    </button>
+    <a href="#" style="margin-left: 2rem; text-decoration:none;" class="tooltip-test" title="Forgot your password?">Reset Password?</a>
+</form>
+{% endblock %}

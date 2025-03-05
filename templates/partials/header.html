@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 5.5rem;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Lifts for Hire</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Lifts for Hire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Not Disabled</a>
+          </li>
+        </ul>
+          <div class="d-flex ms-auto">
+            {% if user %}
+            <a href="{{ url_for('log_out') }}" class="nav-link">Logout</a>
+            {% else %}
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/sign-up" style="margin-right: 1rem;">Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+            </ul>
+            {% endif %}
+          </div>
+      </div>
+    </div>
+  </nav>
