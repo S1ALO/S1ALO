@@ -21,6 +21,8 @@ def SignUp():
         password = request.form["password"]
         confirm_password = request.form["confirm_password"]
 
+        #Searches the database for a email matching the email the user entered into the form.
+        query = cur.execute("SELECT * FROM users WHERE user_email = (?)", [email])
         hashedPassword = hashlib.sha256(password.encode()).hexdigest()
         #Sign up input validation
         if len(email) < 4: #if email is shorter than 4 characters
@@ -33,6 +35,8 @@ def SignUp():
             flash('Passwords must be the same!', category='error') #pop-up alert to inconsistent password entries
         elif len(password) < 7: #if password1 is less than 7 characters
             flash('Password must be atleast 7 characters!', category='error') #pop-up alert to incorrect password lenght
+        elif query.fetchall() != []: #Checks if the email was found in the database.
+            flash("Account on this email already exists!", category="error")
         else: #if there's nothing wrong with input, add user to the database
             #add user to database
             flash('Account Created!', category='success')
