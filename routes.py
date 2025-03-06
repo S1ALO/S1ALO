@@ -62,3 +62,9 @@ def Login():
             user = session['user'] = [result[0], result[1], result[2], result[3]]
             return redirect("/")#User redirected to homepage
     return render_template("login.html", user=user)
+
+@app.route("/reset-password", methods=["GET", "POST"])
+def Reset():
+    user = session.get('user')
+   #Further development would have the reset password functioning
+    return render_template("reset_password.html", user=user)
