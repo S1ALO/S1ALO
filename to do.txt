@@ -1,3 +1,9 @@
-TO DO LIST
+Starting Up List:
+pip install flask
+pip install hashlib
+pip install sqlite3
 
-VALIDATE EMAILS TO AVOID MULTIPLE USERS ON THE SAME EMAIL
+
+Project Further Development:
+Validate user sessions before booking
+Booking page
