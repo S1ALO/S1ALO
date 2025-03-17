@@ -59,6 +59,7 @@ def Login():
         if result == None:
             flash("Incorrect email or password!", category="error")
         else:
+            flash("Successful Login", category="ssuccess")
             user = session['user'] = [result[0], result[1], result[2], result[3]]
             return redirect("/")#User redirected to homepage
     return render_template("login.html", user=user)
