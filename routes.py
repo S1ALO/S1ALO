@@ -69,3 +69,8 @@ def Reset():
     user = session.get('user')
    #Further development would have the reset password functioning
     return render_template("reset_password.html", user=user)
+
+@app.route("/green-products")
+def Products():
+    user = session.get('user')
+    return render_template("green_products.html", user=user)
