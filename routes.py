@@ -67,6 +67,12 @@ def Login():
 @app.route("/reset-password", methods=["GET", "POST"])
 def Reset():
     user = session.get('user')
+    if request.method == "POST":
+        email = request.form["email"]
+        if email:
+            flash("Check your email for the password reset link!", category="success")
+        else:
+            flash("Enter an email for an existing account!", category="error")
    #Further development would have the reset password functioning
     return render_template("reset_password.html", user=user)
 
